@@ -13,16 +13,24 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-
+    <style>
+      #magazine{
+  width: 800px;
+  height: 400px;
+}
+#magazine .turn-page{
+  background-color:#ccc;
+}
+    </style>
     {% load static %}
     <link href="{% static 'carousel.css' %}" rel="stylesheet" type="text/css">
 
-    <title>Ma3had Mahmoud</title>
+    <title>Jam3ti</title>
   </head>
   <body>
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="{% url 'home' %}">Ma3had Mahmoud</a>
+        <a class="navbar-brand" href="{% url 'home' %}">Jam3ti</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -103,11 +111,10 @@
       <div class="container marketing">
 
         <!-- Three columns of text below the carousel -->
-        
+
         <div class="row">
           <div class="table-responsive">
             <table class="table">
-              <caption>List of users</caption>
               <thead>
                 <tr>
                   <th scope="col">#</th>
@@ -119,21 +126,35 @@
                   <th scope="row">1</th>
                   <td><a href="{{subjects.summaries}}">Summaries</td>
                 </tr>
+                  <!--tr>
+                  <th scope="row">1</th>
+                  <td>
+                    <div id="magazine">
+                      <div><span class="text">Page 1</span></div>
+                      <div><span class="text">Page 2</span></div>
+                      <div><span class="text">Page 3</span></div>
+                    </div>
+                  </td>
+                </tr-->
                 <tr>
                   <th scope="row">2</th>
                   <td><a href="{{subjects.mock_exams}}">Mock exams</a></td>
                 </tr>
                 <tr>
                   <th scope="row">3</th>
-                  <td><a href="{{subjects.videos}}">Videos</a></td>
+                  <td><a href="{{subjects.videos}}">Videos</td>
                 </tr>
               </tbody>
             </table>
+            <hr>
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="{{subjects.videos}}" allowfullscreen></iframe>
+            </div>
         </div>
- 
-         
+
+
         </div><!-- /.row -->
-        
+
 
 
         <!-- START THE FEATURETTES -->
@@ -223,11 +244,7 @@
           <a href="#">Me</a>
         </div>
         <div class="footer-copyright text-center py-3">Coded by:
-          <a href="https://twitter.com/Mahmoud_Comedy">Mahmoud Mohammed</a> &
-          <a href="https://twitter.com/helmymoha1">Helmey Al-Mohammady</a>
-        </div>
-        <div class="footer-copyright text-center py-3">Helped in the designing:
-          <a href="https://twitter.com/AlrefaiSamooor">Samar Alrefai</a>
+          <a href="https://twitter.com/Mahmoud_Comedy">Mahmoud Mohammed</a>
         </div>
         <!-- Copyright -->
       </footer>
@@ -237,6 +254,9 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="turn.min.js"></script>
+    <script type="text/javascript">$('#magazine').turn({gradients: true, acceleration: true});</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="https://kit.fontawesome.com/201f795042.js"></script>
